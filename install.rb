@@ -8,10 +8,9 @@ GUI_DIR = 'TypeAnnotationExercise'
 PROJECTS_ADDR = 'https://github.com/ucabgao/annotationExProjects.git'
 PROJECTS_DIR = 'annotationExProjects'
 
-#if File.exist?(GIT_DIR)
-#  puts 'y'
-#  FileUtils.rmdir(GIT_DIR)
-#end
+if File.exist?(GIT_DIR)
+  FileUtils.rmdir(GIT_DIR)
+end
 %x{git clone #{GUI_ADDR}}
 FileUtils.cd(GUI_DIR)
 FileUtils.rmdir(GIT_DIR)
