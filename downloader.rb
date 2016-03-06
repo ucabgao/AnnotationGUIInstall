@@ -3,10 +3,12 @@
 require 'json'
 require 'fileutils'
 
-REPO_FILE = '../data/IRA2.json'
-REPO_DIRECTORY = 'projects'
+REPO_DIRECTORY = 'Experiment2'
+REPO_FILE = '../../data/' + REPO_DIRECTORY + '.json'
+PROJECT_DIRECTORY = 'projects'
 
-FileUtils.cd(REPO_DIRECTORY)
+FileUtils.mkdir_p PROJECT_DIRECTORY + '/' + REPO_DIRECTORY
+FileUtils.cd PROJECT_DIRECTORY + '/' + REPO_DIRECTORY
 JSON.parse(File.read(REPO_FILE)).each { |commit|
   repo = commit['name']
   user = repo.split(/\//)[0]
